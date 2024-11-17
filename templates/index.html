@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="/static/dist/tailwind.css" rel="stylesheet" />
+  </head>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #101010;
+      color: #fff;
+    }
+    aside {
+      background-color: #0e0e0e;
+    }
+    .border-color {
+      border-color: #262626;
+    }
+  </style>
+  <body class="flex flex-row w-screen h-screen">
+    <aside class="flex flex-col w-1/3 h-full border-r-2 border-color p-10">
+      <div class="border-b-2 border-color pb-7 px-3">
+        <h2 class="font-semibold text-lg">CATEGORIAS</h2>
+      </div>
+      <div>
+        {% for categoria in categorias %}
+        <div>
+          <h3>{{categoria['TITLE']}}</h3>
+          {% for elemento in categoria['ELEMENTS'] %}
+          <li>{{elemento}}</li>
+          {% endfor %}
+        </div>
+
+        {% endfor %}
+      </div>
+    </aside>
+
+    <main class="flex flex-col w-full pt-28 px-48">
+      <div class="border-b-2 border-color flex flex-col gap-3 pb-10">
+        <h1 class="font-bold text-5xl">REKRYPT</h1>
+        <p class="text-sm opacity-80">
+          Rekrypt es una herramienta versátil que permite realizar múltiples
+          transformaciones de texto mediante algoritmos de hashing y
+          codificación en secuencia. Cada paso se ajusta a un flujo
+          personalizado, produciendo resultados únicos basados en el orden y las
+          categorías seleccionadas. Descubre nuevas maneras de procesar y
+          transformar tus datos con precisión y control total."
+        </p>
+      </div>
+      <div>
+        <div>
+          <!-- categorias output -->
+        </div>
+        <input class="border-none outline-none" type="text" /><!-- input -->
+        <input class="border-none outline-none" type="text" /><!-- output -->
+      </div>
+    </main>
+
+    <aside class="border-l-2 border-color flex flex-row-reverse">
+      <a
+        href="https://github.com/m4icol/rekrypt"
+        target="_blank"
+        class="m-10 h-10 w-10"
+      >
+        <svg
+          width="33"
+          height="33"
+          viewBox="0 0 33 33"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.5575 0C14.4757 0 12.4144 0.437381 10.491 1.28717C8.56774 2.13696 6.82018 3.38251 5.34815 4.95272C2.37524 8.12389 0.705078 12.4249 0.705078 16.9096C0.705078 24.3837 5.25473 30.7248 11.5481 32.9738C12.3408 33.1091 12.5944 32.5849 12.5944 32.1283V29.2706C8.20328 30.2852 7.26799 27.0047 7.26799 27.0047C6.53877 25.0432 5.50837 24.519 5.50837 24.519C4.06579 23.4706 5.61933 23.5044 5.61933 23.5044C7.20458 23.6228 8.04475 25.2461 8.04475 25.2461C9.42392 27.8164 11.7542 27.0554 12.6578 26.6496C12.8005 25.5505 13.2126 24.8064 13.6565 24.3837C10.1373 23.961 6.44366 22.5067 6.44366 16.0642C6.44366 14.1872 7.04605 12.6822 8.07646 11.4816C7.91794 11.0589 7.3631 9.3003 8.23498 7.0175C8.23498 7.0175 9.56659 6.56094 12.5944 8.74229C13.8467 8.37027 15.2101 8.18427 16.5575 8.18427C17.905 8.18427 19.2683 8.37027 20.5206 8.74229C23.5484 6.56094 24.88 7.0175 24.88 7.0175C25.7519 9.3003 25.1971 11.0589 25.0386 11.4816C26.069 12.6822 26.6714 14.1872 26.6714 16.0642C26.6714 22.5236 22.9619 23.9441 19.4268 24.3668C19.9975 24.891 20.5206 25.9225 20.5206 27.4951V32.1283C20.5206 32.5849 20.7743 33.126 21.5827 32.9738C27.8762 30.7079 32.4099 24.3837 32.4099 16.9096C32.4099 14.689 31.9999 12.4902 31.2033 10.4386C30.4066 8.38703 29.2389 6.52293 27.7669 4.95272C26.2948 3.38251 24.5473 2.13696 22.624 1.28717C20.7007 0.437381 18.6393 0 16.5575 0Z"
+            fill="#D8D8D8"
+          />
+        </svg>
+      </a>
+    </aside>
+  </body>
+</html>
