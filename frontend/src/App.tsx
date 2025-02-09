@@ -1,8 +1,10 @@
+import MethodsList from "./api/request";
+
 function App() {
   return (
     <>
       <div>
-        <p>rekrypt</p>
+        <MethodsList></MethodsList>
       </div>
     </>
   );
