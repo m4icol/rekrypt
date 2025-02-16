@@ -1,18 +1,38 @@
 import { useState } from "react";
 import InputText from "../components/InputText";
+import { axiosAPI } from "../api/axios";
 
-function KryptSection() {
+interface KryptSectionProps {
+  selectedMethods: string[];
+}
+
+function KryptSection({ selectedMethods }: KryptSectionProps) {
   const [inputValue, setInputValue] = useState("");
   const [ouputValue, setOuputValue] = useState("");
 
-  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleChange = async (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const newValue = event.target.value;
     setInputValue(newValue);
-    setOuputValue(newValue.toUpperCase());
+    if (newValue && selectedMethods.length > 0) {
+      try {
+        const response = await axiosAPI.post("/transform", {
+          text: newValue,
+          methods: selectedMethods,
+        });
+        setOuputValue(response.data.result);
+      } catch (error) {
+        console.log("Error encrypting text ", error);
+        setOuputValue("Error encrypting text");
+      }
+    } else {
+      setOuputValue("");
+    }
   };
 
   return (
-    <section className="py-8 px-10 bg-main flex flex-col gap-8">
+    <section className="py-10 px-12 bg-main flex flex-col gap-8">
       <div className=" flex flex-col gap-2">
         <h2 className="font-semibold">Welcome!</h2>
         <p className="text-subtext text-sm">
@@ -23,7 +43,7 @@ function KryptSection() {
         </p>
       </div>
 
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-8">
         <InputText
           label="> ENTRADA"
           value={inputValue}
