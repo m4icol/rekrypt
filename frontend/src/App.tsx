@@ -8,7 +8,7 @@ function App() {
   const [selectedMethods, setSelectedMethods] = useState<string[]>([]);
   return (
     <div className="bg-backgroud text-base h-screen w-screen py-28 px-52 font-display">
-      <main className="border-2 border-stroke rounded-3xl flex flex-row">
+      <main className="shadow-custom overflow-hidden rounded-3xl flex flex-row">
         <Sidebar
           selectedMethods={selectedMethods}
           onMethodsChange={setSelectedMethods}

@@ -7,7 +7,7 @@ interface SidebarProps {
 
 function Sidebar({ selectedMethods, onMethodsChange }: SidebarProps) {
   return (
-    <section className="py-10 px-10 flex flex-col justify-between bg-background w-[500px]">
+    <section className="py-10 px-10 flex flex-col justify-between bg-sidebar w-[500px]">
       <div className="flex flex-col gap-9">
         <h1 className="text-2xl font-bold text-center">REKRYPT</h1>
         <MethodList

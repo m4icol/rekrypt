@@ -1,8 +1,9 @@
 @import "tailwindcss";
 @theme {
-  --color-backgroud: #0f1519;
-  --color-main: #13191d;
-  --color-stroke: #857f88;
+  --color-backgroud: #15191e;
+  --color-main: #13191c;
+  --color-sidebar: #0f151a;
+  --color-stroke: #302d33;
   --text-color-base: #ffffff;
   --text-color-subtext: #bbbbc3;
   --font-display: "Rubik", "sans-serif";
@@ -10,4 +11,8 @@
 
 .method-shadow {
   box-shadow: 0px 1.7px 1px rgba(248, 248, 248, 0.17);
+}
+
+.shadow-custom {
+  box-shadow: -5px -10px 100px 60px rgba(12, 14, 15, 0.8);
 }
