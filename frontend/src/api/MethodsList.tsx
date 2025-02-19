@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { axiosAPI } from "./axios";
-import DnDIcon from "../components/icons/dndIcon.svg";
+import DnDIcon from "../components/icons/DnDIcon.tsx";
 
 interface MethodsListProps {
   selectedMethods: string[];
@@ -38,16 +38,16 @@ const MethodsList = ({
   }, [selectedMethods, onMethodsChange]);
 
   return (
-    <ul className="flex flex-col gap-4">
+    <ul className="flex flex-col gap-5 ">
       {methods.map((method, index) => (
         <li
-          className={`bg-main py-4 px-7 text-xs w-full rounded-xl method-shadow flex flex-row gap-4 cursor-pointer ${
+          className={`bg-main py-4 px-8 w-48 text-xs rounded-xl method-shadow flex flex-row gap-4 cursor-pointer ${
             selectedMethods.includes(method) ? "border-2 border-stroke" : ""
           }`}
           key={index}
           onClick={() => handleMethodSelect(method)}
         >
-          <img src={DnDIcon} alt="Dran and Drop Icon" width={7} />
+          <DnDIcon width={7} height={15} />
           {method}
         </li>
       ))}

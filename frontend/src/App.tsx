@@ -7,8 +7,8 @@ import BlurCircle from "./components/CircleRadius";
 function App() {
   const [selectedMethods, setSelectedMethods] = useState<string[]>([]);
   return (
-    <div className="bg-backgroud text-base h-screen w-screen py-28 px-52 font-display">
-      <main className="shadow-custom overflow-hidden rounded-3xl flex flex-row">
+    <div className="bg-backgroud text-base h-screen w-screen font-display flex justify-center items-center">
+      <main className="w-[1300px] h-[750px] shadow-custom overflow-hidden rounded-3xl flex flex-row justify-between">
         <Sidebar
           selectedMethods={selectedMethods}
           onMethodsChange={setSelectedMethods}
@@ -18,20 +18,20 @@ function App() {
         <BlurCircle
           x={100}
           y={30}
-          size={300}
-          color="rgba(114, 57, 134, 0.25)"
+          size={420}
+          color="rgba(114, 57, 134, 0.17)"
         />
         <BlurCircle
           x={450}
           y={800}
-          size={400}
-          color="rgba(114, 57, 134, 0.25)"
+          size={470}
+          color="rgba(114, 57, 134, 0.18)"
         />
         <BlurCircle
           x={1350}
           y={500}
-          size={350}
-          color="rgba(114, 57, 134, 0.25)"
+          size={420}
+          color="rgba(114, 57, 134, 0.16)"
         />
       </main>
     </div>

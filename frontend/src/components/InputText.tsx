@@ -13,10 +13,10 @@ const InputText: React.FC<InputTextProps> = ({
   onChange,
   readOnly = false,
 }) => (
-  <div className="max-w-[820px] h-[250px] px-5 py-5 border-stroke border-2 rounded-xl flex flex-col gap-2">
+  <div className="max-w-[850px] h-[250px] px-5 py-5 border-stroke border-2 rounded-xl flex flex-col gap-3">
     <label className="text-xs text-subtext font-semibold">{label}</label>
     <textarea
-      className="resize-none field-sizing-content focus:outline-hidden text-subtext text-sm"
+      className="scroll-bar-custom resize-none field-sizing-content focus:outline-hidden text-subtext text-sm"
       placeholder={placeholder}
       value={value}
       onChange={onChange}

@@ -1,4 +1,5 @@
 import MethodList from "../api/MethodsList";
+import AddKrypt from "../components/AddKrypt";
 
 interface SidebarProps {
   selectedMethods: string[];
@@ -7,18 +8,15 @@ interface SidebarProps {
 
 function Sidebar({ selectedMethods, onMethodsChange }: SidebarProps) {
   return (
-    <section className="py-10 px-10 flex flex-col justify-between bg-sidebar w-[500px]">
-      <div className="flex flex-col gap-9">
+    <section className="w-160 py-11 scroll-bar-custom overflow-y-auto overflow-x-hidden items-center flex flex-col justify-between bg-sidebar gap-20">
+      <div className="flex flex-col gap-10">
         <h1 className="text-2xl font-bold text-center">REKRYPT</h1>
         <MethodList
           selectedMethods={selectedMethods}
           onMethodsChange={onMethodsChange}
         ></MethodList>
       </div>
-      <li className="bg-main py-4 px-7  text-sm w-full rounded-xl method-shadow flex flex-row gap-3">
-        <p className=" font-semibold">+</p>
-        ADD KRIPT
-      </li>
+      <AddKrypt></AddKrypt>
     </section>
   );
 }
