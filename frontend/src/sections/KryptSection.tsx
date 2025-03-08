@@ -32,10 +32,10 @@ function KryptSection({ selectedMethods }: KryptSectionProps) {
   };
 
   return (
-    <section className="py-10 px-14 flex flex-col gap-8">
-      <div className=" flex flex-col gap-2">
+    <section className="flex flex-col gap-8 py-10 px-14">
+      <div className="flex flex-col gap-2 ">
         <h2 className="font-semibold">Welcome!</h2>
-        <p className="text-subtext text-sm">
+        <p className="text-sm text-subtext">
           A text encryption tool that allows users to input text and apply
           multiple encryption algorithms in a specified order. Users can choose
           from various hashing algorithms (such as SHA-1, SHA-256, MD5, etc.)

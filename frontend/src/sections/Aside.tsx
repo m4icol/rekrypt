@@ -4,7 +4,7 @@ import GithubIcon from "../components/icons/GithubIcon.tsx";
 
 function Sidebar() {
   return (
-    <aside className="py-15 pr-15 flex flex-col gap-8">
+    <aside className="flex flex-col gap-8 py-15 pr-15">
       <SunIcon width={25} height={25} className="text-white" />
       {/* <MoonIcon width={28} height={28} className="text-white" /> */}
       <a target="_blank" href="https://github.com/m4icol/rekrypt">

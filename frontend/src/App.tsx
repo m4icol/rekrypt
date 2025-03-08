@@ -7,7 +7,7 @@ import BlurCircle from "./components/CircleRadius";
 function App() {
   const [selectedMethods, setSelectedMethods] = useState<string[]>([]);
   return (
-    <div className="bg-backgroud text-base h-screen w-screen font-display flex justify-center items-center">
+    <div className="flex items-center justify-center w-screen h-screen text-base bg-backgroud font-display">
       <main className="w-[1300px] h-[750px] shadow-custom overflow-hidden rounded-3xl flex flex-row justify-between">
         <Sidebar
           selectedMethods={selectedMethods}
@@ -16,22 +16,16 @@ function App() {
         <KryptSection selectedMethods={selectedMethods}></KryptSection>
         <Aside></Aside>
         <BlurCircle
-          x={100}
-          y={30}
-          size={420}
-          color="rgba(114, 57, 134, 0.17)"
-        />
+          x={250}
+          y={750}
+          size={270}
+          color="rgba(140, 47, 173, 0.4)"
+        />{" "}
         <BlurCircle
-          x={450}
-          y={800}
-          size={470}
-          color="rgba(114, 57, 134, 0.18)"
-        />
-        <BlurCircle
-          x={1350}
-          y={500}
-          size={420}
-          color="rgba(114, 57, 134, 0.16)"
+          x={1600}
+          y={10}
+          size={270}
+          color="rgba(140, 47, 173, 0.4)"
         />
       </main>
     </div>
