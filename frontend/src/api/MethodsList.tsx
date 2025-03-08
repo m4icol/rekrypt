@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { axiosAPI } from "./axios.ts";
 import DnDIcon from "../components/icons/DnDIcon.tsx";
+import AddIcon from "../components/icons/AddIcon.tsx";
+import RemoveIcon from "../components/icons/RemoveIcon.tsx";
+import { motion } from "framer-motion";
 
 interface MethodsListProps {
   selectedMethods: string[];
@@ -42,17 +45,26 @@ const MethodsList = ({
       <div className="flex flex-col gap-3">
         <p className="text-sm font-medium text-subtext">ACTIVE</p>
 
-        <ul className="flex flex-col gap-2">
-          {selectedMethods.map((method, index) => (
-            <li
-              className={`flex flex-row items-center gap-5 py-3 px-6 w-52 rounded-xl cursor-pointer hover:bg-backgroud`}
-              key={index}
-              onClick={() => handleMethodSelect(method)}
-            >
-              <DnDIcon width={7} height={15} />
-              {method}
-            </li>
-          ))}
+        <ul className="flex flex-col">
+          {selectedMethods.length === 0 ? (
+            <p className="text-gray-500 py-3">No methods selected</p>
+          ) : (
+            selectedMethods.map((method, index) => (
+              <motion.li
+                className={`flex flex-row items-center gap-5 py-3 px-6 w-52 rounded-xl cursor-pointer hover:bg-backgroud`}
+                key={index}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -10 }}
+                transition={{ duration: 0.4 }}
+              >
+                <span className="flex-shrink-0">
+                  <DnDIcon></DnDIcon>
+                </span>
+                <span className="truncate">{method}</span>
+              </motion.li>
+            ))
+          )}
         </ul>
       </div>
       <div className="flex flex-col gap-3">
@@ -61,13 +73,19 @@ const MethodsList = ({
         <ul className="flex flex-col gap-2">
           {methods.map((method, index) => (
             <li
-              className={`flex flex-row items-center gap-5 py-3 px-6 w-52 rounded-xl cursor-pointer hover:bg-backgroud
+              className={`flex flex-row items-center gap-5 py-3 px-6 w-56 rounded-xl cursor-pointer hover:bg-backgroud
     ${selectedMethods.includes(method) ? "outline-2 outline-stroke" : ""}`}
               key={index}
               onClick={() => handleMethodSelect(method)}
             >
-              <DnDIcon width={7} height={15} />
-              {method}
+              <span className="flex-shrink-0">
+                {selectedMethods.includes(method) ? (
+                  <RemoveIcon />
+                ) : (
+                  <AddIcon />
+                )}
+              </span>
+              <span className="truncate">{method}</span>
             </li>
           ))}
         </ul>

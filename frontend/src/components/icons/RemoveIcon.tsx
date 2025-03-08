@@ -1,8 +1,8 @@
 import React from "react";
 
-const DnDIcon = (props: React.SVGProps<SVGSVGElement>) => (
+const RemoveIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
-    className="w-5.5 h-5.5 text-gray-800 dark:text-white"
+    className="w-5 h-5 text-gray-800 dark:text-subtext"
     aria-hidden="true"
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
@@ -12,10 +12,11 @@ const DnDIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <path
       stroke="currentColor"
       strokeLinecap="round"
+      strokeLinejoin="round"
       strokeWidth="2"
-      d="M9 6h.01M9 12h.01M9 18h.01M15 6h.01M15 12h.01M15 18h.01"
+      d="M6 18 17.94 6M18 18 6.06 6"
     />
   </svg>
 );
 
-export default DnDIcon;
+export default RemoveIcon;
