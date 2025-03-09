@@ -1,13 +1,15 @@
-import SunIcon from "../components/icons/SunIcon.tsx";
-// import MoonIcon from "../components/icons/MoonIcon.tsx";
 import GithubIcon from "../components/icons/GithubIcon.tsx";
 
 function Sidebar() {
   return (
-    <aside className="flex flex-col gap-8 py-15 pr-15">
-      <SunIcon width={25} height={25} className="text-white" />
-      {/* <MoonIcon width={28} height={28} className="text-white" /> */}
-      <a target="_blank" href="https://github.com/m4icol/rekrypt">
+    <aside className="flex flex-col-reverse py-15 pr-13">
+      <a
+        target="_blank"
+        href="https://github.com/m4icol/rekrypt"
+        rel="noopener noreferrer"
+        title="View Rekrypt on GitHub"
+        aria-label="View Rekrypt on GitHub"
+      >
         <GithubIcon width={25} height={25} className="text-white" />
       </a>
     </aside>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InputText from "../components/InputText";
 import { axiosAPI } from "../api/axios";
 
@@ -10,29 +10,33 @@ function KryptSection({ selectedMethods }: KryptSectionProps) {
   const [inputValue, setInputValue] = useState("");
   const [ouputValue, setOuputValue] = useState("");
 
-  const handleChange = async (
-    event: React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    const newValue = event.target.value;
-    setInputValue(newValue);
-    if (newValue && selectedMethods.length > 0) {
-      try {
-        const response = await axiosAPI.post("/transform", {
-          text: newValue,
-          methods: selectedMethods,
-        });
-        setOuputValue(response.data.result);
-      } catch (error) {
-        console.log("Error encrypting text ", error);
-        setOuputValue("Error encrypting text");
+  useEffect(() => {
+    const encryptText = async () => {
+      if (inputValue && selectedMethods.length > 0) {
+        try {
+          const response = await axiosAPI.post("/transform", {
+            text: inputValue,
+            methods: selectedMethods,
+          });
+          setOuputValue(response.data.result);
+        } catch (error) {
+          console.log("Error encrypting text ", error);
+          setOuputValue("Error encrypting text");
+        }
+      } else {
+        setOuputValue("Select a method and type to enkrypt");
       }
-    } else {
-      setOuputValue("Select a method to enkrypt");
-    }
+    };
+
+    encryptText();
+  }, [inputValue, selectedMethods]);
+
+  const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInputValue(event.target.value);
   };
 
   return (
-    <section className="flex flex-col gap-8 py-10 px-14">
+    <section className="flex flex-col justify-between py-12 pl-15">
       <div className="flex flex-col gap-2 ">
         <h2 className="font-semibold">Welcome!</h2>
         <p className="text-sm text-subtext">

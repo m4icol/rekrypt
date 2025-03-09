@@ -15,13 +15,13 @@ const MethodsList = ({
   onMethodsChange,
 }: MethodsListProps) => {
   const [methods, setMethods] = useState<string[]>([]);
+
   useEffect(() => {
     const fetchMethods = async () => {
       try {
         const response = await axiosAPI.get("/methods");
         const methodsArray = response.data.methods;
-        console.log("API Response:", methodsArray); // Methods in console
-        setMethods(methodsArray || []); // Return methods arr or an empty arr
+        setMethods(methodsArray || []);
       } catch (error) {
         console.log("Error fetching methods: ", error);
       }
@@ -33,21 +33,17 @@ const MethodsList = ({
     const updatedMethods = selectedMethods.includes(method)
       ? selectedMethods.filter((m) => m !== method)
       : [...selectedMethods, method];
-    onMethodsChange(updatedMethods);
+    onMethodsChange(updatedMethods); // Única llamada a onMethodsChange
   };
 
-  useEffect(() => {
-    onMethodsChange(selectedMethods);
-  }, [selectedMethods, onMethodsChange]);
-
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-10 pl-1">
       <div className="flex flex-col gap-3">
         <p className="text-sm font-medium text-subtext">ACTIVE</p>
 
         <ul className="flex flex-col">
           {selectedMethods.length === 0 ? (
-            <p className="text-gray-500 py-3">No methods selected</p>
+            <li className="text-subtext py-3">No methods selected</li>
           ) : (
             selectedMethods.map((method, index) => (
               <motion.li
@@ -56,7 +52,7 @@ const MethodsList = ({
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -10 }}
-                transition={{ duration: 0.4 }}
+                transition={{ duration: 0.45 }}
               >
                 <span className="flex-shrink-0">
                   <DnDIcon></DnDIcon>
@@ -67,13 +63,13 @@ const MethodsList = ({
           )}
         </ul>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
         <p className="text-sm font-medium text-subtext">AVAILABLE</p>
 
         <ul className="flex flex-col gap-2">
           {methods.map((method, index) => (
             <li
-              className={`flex flex-row items-center gap-5 py-3 px-6 w-56 rounded-xl cursor-pointer hover:bg-backgroud
+              className={`flex flex-row items-center gap-5 py-3 px-6 w-52 rounded-xl cursor-pointer hover:bg-backgroud
     ${selectedMethods.includes(method) ? "outline-2 outline-stroke" : ""}`}
               key={index}
               onClick={() => handleMethodSelect(method)}
