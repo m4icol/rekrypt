@@ -39,7 +39,7 @@ const MethodsList = ({
   return (
     <div className="flex flex-col items-center gap-10 pl-1">
       <ul className="flex flex-col gap-2 w-52">
-        <p className="pb-2 text-sm font-medium text-subtext">ACTIVE</p>
+        <li className="pb-2 text-sm font-medium text-subtext">ACTIVE</li>
         {selectedMethods.length === 0 ? (
           <li className="w-48 py-1 pl-4 text-subtext">No methods selected</li>
         ) : (
@@ -62,7 +62,7 @@ const MethodsList = ({
       </ul>
 
       <ul className="flex flex-col gap-2 w-52">
-        <p className="pb-2 text-sm font-medium text-subtext">AVAILABLE</p>
+        <li className="pb-2 text-sm font-medium text-subtext">AVAILABLE</li>
         {methods.map((method, index) => (
           <li
             className={`flex flex-row items-center gap-5 py-3 px-4 w-full rounded-xl cursor-pointer hover:bg-background
