@@ -5,7 +5,7 @@ import { Mesh } from "three";
 
 const Wireframe = () => {
   return (
-    <div className="absolute opacity-20 top-0 left-0 w-full h-full">
+    <div className="absolute top-0 left-0 hidden w-full h-full lg:inline opacity-20">
       <Canvas>
         <ambientLight intensity={0.1} />
         <WireframeTorus />

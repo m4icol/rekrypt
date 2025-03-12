@@ -17,7 +17,7 @@ METHODS = {
     "BASE 64": lambda text: binascii.b2a_base64(text.encode()).decode().strip(),
     "BINARY": lambda text:''.join(format(ord(char), '08b') for char in text),
     "CRC32": lambda text:format(binascii.crc32(text.encode()), '08x'),
-    "UUNCODE": lambda text:binascii.b2a_uu(text.encode()).decode(),
+    "UUNCasdasdasdODE": lambda text:binascii.b2a_uu(text.encode()).decode(),
     "REVERSE": lambda text: text[::-1],
     
 }

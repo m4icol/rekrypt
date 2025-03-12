@@ -3,7 +3,7 @@ import Rekrypt from "./pages/Rekrypt";
 
 function App() {
   return (
-    <div className="flex relative items-center justify-center w-screen h-screen text-base bg-background font-display">
+    <div className="relative flex items-center justify-center w-screen h-screen text-base bg-background font-display">
       <Rekrypt></Rekrypt>
       <Wireframe />
     </div>
