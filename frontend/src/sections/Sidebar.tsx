@@ -1,7 +1,7 @@
 import { useState } from "react";
 import MethodList from "../api/MethodsList";
-import OptionIcon from "../components/icons/OptionIcon";
 import RemoveIcon from "../components/icons/RemoveIcon";
+import MenuIcon from "../components/icons/MenuIcon";
 
 interface SidebarProps {
   selectedMethods: string[];
@@ -14,8 +14,8 @@ function Sidebar({ selectedMethods, onMethodsChange }: SidebarProps) {
   return (
     <>
       {!isOpen && (
-        <div className="absolute z-30 flex flex-row gap-5 top-9 left-9 lg:hidden">
-          <OptionIcon
+        <div className="absolute z-30 flex flex-row gap-5 top-9 left-11 lg:hidden">
+          <MenuIcon
             className="cursor-pointer w-7 h-7"
             onClick={() => setIsOpen(true)}
           />
