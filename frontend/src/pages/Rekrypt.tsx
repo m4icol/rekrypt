@@ -7,7 +7,7 @@ function Rekrypt() {
   const [selectedMethods, setSelectedMethods] = useState<string[]>([]);
 
   return (
-    <main className=" bg-background z-20 lg:w-[1300px] lg:h-[750px] h-screen w-screen shadow-custom overflow-hidden lg:rounded-3xl flex lg:flex-row flex-col">
+    <main className=" bg-background z-20 lg:h-[40rem] xl:h-[47.5rem] lg:w-auto h-screen w-screen shadow-custom overflow-hidden lg:rounded-3xl flex lg:flex-row flex-col">
       <Sidebar
         selectedMethods={selectedMethods}
         onMethodsChange={setSelectedMethods}

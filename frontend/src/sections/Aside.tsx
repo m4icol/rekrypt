@@ -2,7 +2,7 @@ import GithubIcon from "../components/icons/GithubIcon.tsx";
 
 function Sidebar() {
   return (
-    <aside className="flex-col-reverse hidden lg:flex py-15">
+    <aside className="flex-col-reverse hidden lg:flex py-15 px-10">
       <a
         target="_blank"
         href="https://github.com/m4icol/rekrypt"
