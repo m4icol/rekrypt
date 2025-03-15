@@ -36,10 +36,10 @@ function KryptSection({ selectedMethods }: KryptSectionProps) {
   };
 
   return (
-    <section className="flex flex-col py-24 gap-8 px-12 lg:pr-0 lg:py-12 ">
+    <section className="flex flex-col py-24 gap-8 px-12 lg:pr-0 lg:py-12 lg:max-w-[35rem] 2xl:max-w-[54rem] ">
       <div className="flex flex-col gap-2">
         <h1 className="font-semibold">Welcome to Rekrypt</h1>
-        <p className="text-sm text-pretty xl:text-wrap text-subtext lg:max-w-[35rem] xl:max-w-[52rem] break-words">
+        <p className="text-sm text-pretty 2xl:text-wrap text-subtext break-words">
           A text encryption tool that allows users to input text and apply
           multiple encryption algorithms in a specified order. Users can choose
           from various hashing algorithms (such as SHA-1, SHA-256, MD5, etc.)
@@ -47,7 +47,7 @@ function KryptSection({ selectedMethods }: KryptSectionProps) {
         </p>
       </div>
 
-      <div className="flex flex-col gap-5 xl:gap-8 ">
+      <div className="flex flex-col gap-5 2xl:gap-8 ">
         <InputText
           label="> INPUT"
           value={inputValue}
