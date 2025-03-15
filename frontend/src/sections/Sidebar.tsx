@@ -19,7 +19,7 @@ function Sidebar({ selectedMethods, onMethodsChange }: SidebarProps) {
             className="cursor-pointer w-7 h-7"
             onClick={() => setIsOpen(true)}
           />
-          <h2 className="text-2xl font-bold">REKRYPT</h2>
+          <h2 className="text-2xl font-bold lg:text-xl xl:text-2xl">REKRYPT</h2>
         </div>
       )}
 
@@ -31,17 +31,18 @@ function Sidebar({ selectedMethods, onMethodsChange }: SidebarProps) {
       )}
 
       <section
-        className={`fixed top-0 left-0 h-full w-72 bg-sidebar z-30 flex flex-col overflow-x-hidden overflow-y-auto scroll-bar-custom gap-10 transform transition-transform duration-300 ease-in-out 
+        className={`fixed top-0 left-0 bg-sidebar z-30 flex flex-col overflow-x-hidden overflow-y-auto scroll-bar-custom gap-10 lg:gap-8 2xl:gap-10 transform transition-transform duration-300 ease-in-out 
+          w-72 lg:w-52 2xl:w-72
         ${
           isOpen ? "translate-x-0" : "translate-x-[-100%]"
         } lg:translate-x-0 lg:relative`}
       >
-        <div className="flex flex-row items-center gap-5 pt-9 px-9 lg:pt-12 lg:pl-22">
+        <div className="flex flex-row items-center gap-5 pt-9 px-11 lg:pt-9 2xl:pt-11 lg:justify-center">
           <RemoveIcon
             className="cursor-pointer w-7 h-7 lg:hidden"
             onClick={() => setIsOpen(false)}
           />
-          <h2 className="text-2xl font-bold">REKRYPT</h2>
+          <h2 className="text-2xl font-bold lg:text-xl xl:text-2xl">REKRYPT</h2>
         </div>
 
         <MethodList

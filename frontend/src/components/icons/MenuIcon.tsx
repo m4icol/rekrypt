@@ -1,6 +1,6 @@
 const MenuIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
-    className="w-5 h-5 text-white"
+    className="w-8 text-white h-7"
     width="24"
     height="24"
     viewBox="0 0 24 24"

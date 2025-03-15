@@ -3,10 +3,15 @@
   --color-background: #202024;
   --color-sidebar: #19191f;
   --color-stroke: #302d33;
-  --text-color-base: #ffffff;
+  --text-color-base-white: #ffffff;
   --text-color-subtext: #aaaaa3;
   --font-display: "Rubik", "sans-serif";
 }
+
+html, body {
+  overflow-x: hidden;
+}
+
 
 @font-face {
   font-family: "Rubik";
