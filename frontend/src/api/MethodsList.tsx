@@ -38,14 +38,14 @@ const MethodsList = ({
 
   return (
     <div className="flex flex-col items-center gap-6 text-sm lg:text-xs xl:text-sm">
-      <ul className="flex flex-col w-48 gap-1 lg:w-36 2xl:w-48">
+      <ul className="flex flex-col w-48 gap-1 lg:w-46">
         <li className="pb-2 font-medium text-subtext w-36">ACTIVE</li>
         {selectedMethods.length === 0 ? (
           <li className="py-4 pl-4 text-subtext">No methods selected</li>
         ) : (
           selectedMethods.map((method, index) => (
             <motion.li
-              className={`flex flex-row items-center gap-3 py-3.5 lg:py-2.5 2xl:py-3.5 pl-3.5 pr-3  w-full rounded-xl hover:bg-background`}
+              className={`flex flex-row items-center gap-3 py-3.5 lg:py-2.5  pl-3.5 pr-3 w-full rounded-xl hover:bg-background`}
               key={index}
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
@@ -61,11 +61,11 @@ const MethodsList = ({
         )}
       </ul>
 
-      <ul className="flex flex-col w-48 gap-2 pb-5 lg:w-36 2xl:w-48">
+      <ul className="flex flex-col w-48 gap-2 pb-5 lg:w-46">
         <li className="pb-2 font-medium text-subtext ">AVAILABLE</li>
         {methods.map((method, index) => (
           <li
-            className={`flex flex-row items-center gap-3 py-3.5 lg:py-2.5 2xl:py-3.5 pl-4 pr-3 rounded-xl cursor-pointer hover:bg-background
+            className={`flex flex-row items-center gap-3 py-3.5 lg:py-3 pl-4 pr-3 rounded-xl cursor-pointer hover:bg-background
     ${selectedMethods.includes(method) ? "outline-1 outline-stroke" : ""}`}
             key={index}
             onClick={() => handleMethodSelect(method)}

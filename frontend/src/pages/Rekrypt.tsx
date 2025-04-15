@@ -1,26 +1,27 @@
 import { useState } from "react";
-import Aside from "../sections/Aside";
+import BlurCircle from "../components/CircleRadius";
 import KryptSection from "../sections/KryptSection";
 import Sidebar from "../sections/Sidebar";
-import BlurCircle from "../components/CircleRadius";
+import Aside from "../sections/Aside";
 function Rekrypt() {
   const [selectedMethods, setSelectedMethods] = useState<string[]>([]);
-
   return (
-    <main className=" bg-background z-20 lg:h-[34.5rem] 2xl:h-[47.5rem] lg:w-auto h-screen w-screen shadow-custom overflow-hidden lg:rounded-3xl flex lg:flex-row flex-col">
-      <Sidebar
-        selectedMethods={selectedMethods}
-        onMethodsChange={setSelectedMethods}
-      ></Sidebar>
-      <KryptSection selectedMethods={selectedMethods}></KryptSection>
-      <Aside></Aside>
+    <main className="z-10 h-screen w-screen lg:h-4/5 lg:w-2/3 shadow-custom overflow-hidden lg:rounded-3xl">
+      <div className="bg-background flex flex-row h-full w-full">
+        <Sidebar
+          selectedMethods={selectedMethods}
+          onMethodsChange={setSelectedMethods}
+        ></Sidebar>
+        <KryptSection selectedMethods={selectedMethods}></KryptSection>
+        <Aside></Aside>
+      </div>
       <BlurCircle
         x={250}
         y={750}
         size={270}
-        color="rgba(140, 47, 173, 0.5)"
-      />{" "}
-      <BlurCircle x={1600} y={10} size={270} color="rgba(140, 47, 173, 0.5)" />
+        color="rgba(140, 47, 173, 0.6"
+      />
+      <BlurCircle x={1100} y={10} size={270} color="rgba(140, 47, 173, 0.6)" />
     </main>
   );
 }

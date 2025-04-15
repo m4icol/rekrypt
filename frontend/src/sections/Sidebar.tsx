@@ -31,18 +31,19 @@ function Sidebar({ selectedMethods, onMethodsChange }: SidebarProps) {
       )}
 
       <section
-        className={`fixed top-0 left-0 bg-sidebar z-30 flex flex-col overflow-x-hidden overflow-y-auto scroll-bar-custom gap-10 lg:gap-8 2xl:gap-10 transform transition-transform duration-300 ease-in-out 
-          w-72 lg:w-52 2xl:w-72
+        className={`fixed top-0 left-0 z-30 overflow-x-hidden overflow-y-auto scroll-bar-custom
+            bg-sidebar transform transition-transform duration-300 ease-in-out 
+            w-72 lg:w-100 flex flex-col gap-10 lg:gap-10
         ${
           isOpen ? "translate-x-0" : "translate-x-[-100%]"
         } lg:translate-x-0 lg:relative`}
       >
-        <div className="flex flex-row items-center gap-5 pt-9 px-11 lg:pt-9 2xl:pt-11 lg:justify-center">
+        <div className="flex flex-row items-center gap-5 pt-9 px-11 lg:pt-10 lg:justify-center">
           <RemoveIcon
             className="cursor-pointer w-7 h-7 lg:hidden"
             onClick={() => setIsOpen(false)}
           />
-          <h2 className="text-2xl font-bold lg:text-xl xl:text-2xl">REKRYPT</h2>
+          <h2 className="text-2xl font-bold lg:text-2xl">REKRYPT</h2>
         </div>
 
         <MethodList
@@ -54,4 +55,4 @@ function Sidebar({ selectedMethods, onMethodsChange }: SidebarProps) {
   );
 }
 
-export default Sidebar;
+export default Sidebar; 
