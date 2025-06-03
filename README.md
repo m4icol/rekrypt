@@ -10,8 +10,7 @@ Rekrypt es una aplicación web que permite transformar cadenas de texto aplicand
 
 ## 📸 Capturas de Pantalla
 
-![image](https://github.com/user-attachments/assets/61a46c26-7e16-4854-9efe-e695928019a9)
-![image](https://github.com/user-attachments/assets/604f23ef-68c2-4cab-818a-96b26f7c0f19)
+![image](/frontend/public/rekrypt-imagen.webp)
 
 ## 🤝 Contribuciones
 
