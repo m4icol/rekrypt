@@ -7,7 +7,7 @@ interface KryptSectionProps {
 }
 
 function KryptSection({ selectedMethods }: KryptSectionProps) {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState("Type here for encryption");
   const [ouputValue, setOuputValue] = useState("");
 
   useEffect(() => {
