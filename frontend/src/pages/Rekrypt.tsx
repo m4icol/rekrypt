@@ -4,7 +4,7 @@ import KryptSection from "../sections/KryptSection";
 import Sidebar from "../sections/Sidebar";
 import Aside from "../sections/Aside";
 function Rekrypt() {
-  const [selectedMethods, setSelectedMethods] = useState<string[]>(["SHA_256"]);
+  const [selectedMethods, setSelectedMethods] = useState<string[]>(["SHA_256", "BASE 64"]);
   return (
     <main className="z-10 h-screen w-screen lg:h-4/5 lg:w-2/3 shadow-custom overflow-hidden lg:rounded-3xl">
       <div className="bg-background flex flex-row h-full w-full">
