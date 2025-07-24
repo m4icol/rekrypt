@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import InputText from "../components/InputText";
 import { axiosAPI } from "../api/axios";
 
@@ -9,6 +9,23 @@ interface KryptSectionProps {
 function KryptSection({ selectedMethods }: KryptSectionProps) {
   const [inputValue, setInputValue] = useState("Type here for encryption");
   const [ouputValue, setOuputValue] = useState("");
+  const typingRef = useRef<number | null>(null);
+
+  const typeText = (text: string) => {
+    if (typingRef.current) clearInterval(typingRef.current)
+
+    setOuputValue("");
+    let i = 0;
+
+    typingRef.current = setInterval(()=> {
+      if(i< text.length){
+        setOuputValue(text.slice(0, i + 1));
+        i++;
+      } else {
+        clearInterval(typingRef.current!);
+      }
+    }, 15)
+  } 
 
   useEffect(() => {
     const encryptText = async () => {
@@ -18,13 +35,13 @@ function KryptSection({ selectedMethods }: KryptSectionProps) {
             text: inputValue,
             methods: selectedMethods,
           });
-          setOuputValue(response.data.result);
+          typeText(response.data.result);
         } catch (error) {
           console.log("Error encrypting text ", error);
-          setOuputValue("Error encrypting text");
+          typeText("Error encrypting text");
         }
       } else {
-        setOuputValue("Select a method and type to enkrypt");
+        typeText("Select a method and type to enkrypt");
       }
     };
 
@@ -51,7 +68,7 @@ function KryptSection({ selectedMethods }: KryptSectionProps) {
                 <InputText
                     label="> INPUT"
                     value={inputValue}
-                    placeholder="Type here"
+                    placeholder="Type here to encrypt"
                     onChange={handleChange}
                 ></InputText>
                 <InputText
