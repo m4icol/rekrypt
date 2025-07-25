@@ -18,10 +18,10 @@ function Rekrypt() {
       <BlurCircle
         x={150}
         y={550}
-        size={400}
-        color="rgba(140, 47, 173, 0.2"
+        size={420}
+        color="rgba(140, 47, 173, 0.28"
       />
-      <BlurCircle x={1100} y={10} size={370} color="rgba(140, 47, 173, 0.25)" />
+      <BlurCircle x={1100} y={10} size={420} color="rgba(140, 47, 173, 0.28)" />
     </main>
   );
 }

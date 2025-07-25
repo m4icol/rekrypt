@@ -10,7 +10,7 @@ function Sidebar() {
         title="View Rekrypt on GitHub"
         aria-label="View Rekrypt on GitHub"
       >
-        <GithubIcon className="text-white lg:w-8" />
+        <GithubIcon className="text-subtext hover:text-base-white lg:w-8" />
       </a>
     </aside>
   );
