@@ -30,13 +30,13 @@ const WireframeTorus = () => {
 
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.z += 0.0002;
+      ref.current.rotation.z += 0.0001;
       ref.current.rotation.x -= 0.0001;
-      ref.current.rotation.y += 0.0002;
+      ref.current.rotation.y += 0.0001;
     }
   });
 
-  const geometry = new TorusGeometry(3, 1, 5, 20);
+  const geometry = new TorusGeometry(3, 1, 5, 15);
   const wireframeGeo = new WireframeGeometry(geometry);
   const material = new MeshBasicMaterial({ color: 0x888899 });
 

@@ -1,11 +1,15 @@
-import Wireframe from "./components/Wireframe";
-import Rekrypt from "./pages/Rekrypt";
+import { lazy, Suspense } from "react";
+
+const Rekrypt = lazy(() => import("./pages/Rekrypt"));
+const Wireframe = lazy(() => import("./components/Wireframe"));
 
 function App() {
   return (
     <div className="relative flex lg:items-center justify-center w-screen h-screen text-base-white bg-background font-display">
-      <Rekrypt></Rekrypt>
-      <Wireframe />
+      <Suspense fallback={<div>Loading Rekrypt...</div>}>
+        <Rekrypt />
+        <Wireframe />
+      </Suspense>
     </div>
   );
 }
