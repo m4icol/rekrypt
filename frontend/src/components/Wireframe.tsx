@@ -1,6 +1,6 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { TorusGeometry, WireframeGeometry, MeshBasicMaterial } from "three";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Mesh } from "three";
 
 const Wireframe = () => {
@@ -36,9 +36,11 @@ const WireframeTorus = () => {
     }
   });
 
-  const geometry = new TorusGeometry(3, 1, 5, 15);
-  const wireframeGeo = new WireframeGeometry(geometry);
-  const material = new MeshBasicMaterial({ color: 0x888899 });
+  const wireframeGeo = useMemo(() => {
+    const torus = new TorusGeometry(3, 1, 5, 8); // simplified geometry
+    return new WireframeGeometry(torus);
+  }, []);
+  const material = useMemo(() => new MeshBasicMaterial({ color: 0x888899 }), []);
 
   return (
     <lineSegments
