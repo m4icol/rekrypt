@@ -12,31 +12,23 @@ html, body {
   overflow-x: hidden;
 }
 
-
 @font-face {
   font-family: "Rubik";
-  src: url("/fonts/Rubik-Regular.woff") format("woff");
+  src: url("/fonts/Rubik-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Rubik";
-  src: url("/fonts/Rubik-Medium.woff") format("woff");
+  src: url("/fonts/Rubik-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Rubik";
-  src: url("/fonts/Rubik-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Rubik";
-  src: url("/fonts/Rubik-Bold.woff") format("woff");
+  src: url("/fonts/Rubik-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }

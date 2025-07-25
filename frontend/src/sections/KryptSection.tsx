@@ -56,7 +56,7 @@ function KryptSection({ selectedMethods }: KryptSectionProps) {
         <section className="h-full w-full text-sm lg:text-sm
             flex flex-col py-24 gap-7 px-12 lg:px-10 lg:pr-0 lg:py-9">
             <div className="flex flex-col gap-2">
-                <h1 className="font-semibold text-base">Welcome to Rekrypt</h1>
+                <h1 className="font-medium text-base">Welcome to Rekrypt</h1>
                 <p className="text-pretty text-subtext">
                 A text encryption tool that allows users to input text and apply
                 multiple encryption algorithms in a specified order. Users can choose

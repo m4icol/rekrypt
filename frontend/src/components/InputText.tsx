@@ -27,7 +27,7 @@ interface InputTextProps {
   
     return (
       <div className="flex flex-col gap-3 px-5 py-5 border-2 border-stroke rounded-xl h-full">
-        <label className="text-xs font-semibold text-subtext">{label}</label>
+        <label className="text-xs font-medium text-subtext">{label}</label>
         <textarea
           className="h-full resize-none scroll-bar-custom focus:outline-hidden text-subtext"
           placeholder={placeholder}
