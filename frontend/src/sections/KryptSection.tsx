@@ -7,7 +7,7 @@ interface KryptSectionProps {
 }
 
 function KryptSection({ selectedMethods }: KryptSectionProps) {
-  const [inputValue, setInputValue] = useState("Type here for encryption");
+  const [inputValue, setInputValue] = useState("Type here to enkrypt");
   const [ouputValue, setOuputValue] = useState("");
   const typingRef = useRef<number | null>(null);
 
@@ -68,7 +68,7 @@ function KryptSection({ selectedMethods }: KryptSectionProps) {
                 <InputText
                     label="> INPUT"
                     value={inputValue}
-                    placeholder="Type here to encrypt"
+                    placeholder="Type here to enkrypt"
                     onChange={handleChange}
                 ></InputText>
                 <InputText

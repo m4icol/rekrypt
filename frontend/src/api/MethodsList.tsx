@@ -65,7 +65,7 @@ const MethodsList = ({
         <li className="pb-2 font-medium text-subtext ">AVAILABLE</li>
         {methods.map((method, index) => (
           <li
-            className={`flex flex-row items-center gap-3 py-3.5 lg:py-3 pl-4 pr-3 rounded-xl cursor-pointer hover:bg-background
+            className={`flex flex-row items-center gap-3 py-2.5 lg:py-2.5 pl-4 pr-3 rounded-lg cursor-pointer hover:bg-background
     ${selectedMethods.includes(method) ? "outline-1 outline-stroke" : ""}`}
             key={index}
             onClick={() => handleMethodSelect(method)}
